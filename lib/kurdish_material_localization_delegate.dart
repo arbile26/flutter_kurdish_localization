@@ -354,221 +354,245 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get lastPageTooltip => 'دوایین لاپه‌ڕه‌';
 
   @override
-  String get keyboardKeyAlt => throw UnimplementedError();
 
   @override
-  String get keyboardKeyAltGraph => throw UnimplementedError();
+  String get showMenuTooltip => 'پیشاندانی پێڕست';
 
   @override
-  String get keyboardKeyBackspace => throw UnimplementedError();
+  String get signedInLabel => 'چوونە ژوورەوە';
 
   @override
-  String get keyboardKeyCapsLock => throw UnimplementedError();
+  String get tabLabelRaw => 'خشتەبەندی \$tabIndex لە \$tabCount';
 
   @override
-  String get keyboardKeyChannelDown => throw UnimplementedError();
+  TimeOfDayFormat get timeOfDayFormatRaw => TimeOfDayFormat.h_colon_mm_space_a;
 
   @override
-  String get keyboardKeyChannelUp => throw UnimplementedError();
+  String get timePickerDialHelpText => 'کات هەڵبژێرە';
 
   @override
-  String get keyboardKeyControl => throw UnimplementedError();
+  String get timePickerHourLabel => 'کاتژمێر';
 
   @override
-  String get keyboardKeyDelete => throw UnimplementedError();
-
-  String get keyboardKeyEisu => throw UnimplementedError();
+  String get timePickerHourModeAnnouncement => 'کاتژمێر هەڵبژێرە';
 
   @override
-  String get keyboardKeyEject => throw UnimplementedError();
+  String get timePickerInputHelpText => 'کات بنووسە';
 
   @override
-  String get keyboardKeyEnd => throw UnimplementedError();
+  String get timePickerMinuteLabel => 'خولەک';
 
   @override
-  String get keyboardKeyEscape => throw UnimplementedError();
+  String get timePickerMinuteModeAnnouncement => 'خولەک هەڵبژێرە';
 
   @override
-  String get keyboardKeyFn => throw UnimplementedError();
-
-  String get keyboardKeyHangulMode => throw UnimplementedError();
-
-  String get keyboardKeyHanjaMode => throw UnimplementedError();
-
-  String get keyboardKeyHankaku => throw UnimplementedError();
-
-  String get keyboardKeyHiragana => throw UnimplementedError();
-
-  String get keyboardKeyHiraganaKatakana => throw UnimplementedError();
+  String get unspecifiedDate => 'بەروار';
 
   @override
-  String get keyboardKeyHome => throw UnimplementedError();
+  String get unspecifiedDateRange => 'مەودای بەروار';
 
   @override
-  String get keyboardKeyInsert => throw UnimplementedError();
-
-  String get keyboardKeyKanaMode => throw UnimplementedError();
-
-  String get keyboardKeyKanjiMode => throw UnimplementedError();
-
-  String get keyboardKeyKatakana => throw UnimplementedError();
+  String get viewLicensesButtonLabel => 'پیشاندانی مۆڵەتەکان';
 
   @override
-  String get keyboardKeyMeta => throw UnimplementedError();
+  String get firstPageTooltip => 'لاپه‌ڕه‌ی سه‌ره‌تا';
 
   @override
-  String get keyboardKeyMetaMacOs => throw UnimplementedError();
+  String get lastPageTooltip => 'دوایین لاپه‌ڕه‌';
+  @override
+  String get keyboardKeyAlt => 'Alt';
 
   @override
-  String get keyboardKeyMetaWindows => throw UnimplementedError();
+  String get keyboardKeyAltGraph => 'AltGr';
 
   @override
-  String get keyboardKeyNumLock => throw UnimplementedError();
+  String get keyboardKeyBackspace => 'Backspace';
 
   @override
-  String get keyboardKeyNumpad0 => throw UnimplementedError();
+  String get keyboardKeyCapsLock => 'Caps Lock';
 
   @override
-  String get keyboardKeyNumpad1 => throw UnimplementedError();
+  String get keyboardKeyChannelDown => 'Channel Down';
 
   @override
-  String get keyboardKeyNumpad2 => throw UnimplementedError();
+  String get keyboardKeyChannelUp => 'Channel Up';
 
   @override
-  String get keyboardKeyNumpad3 => throw UnimplementedError();
+  String get keyboardKeyControl => 'Ctrl';
 
   @override
-  String get keyboardKeyNumpad4 => throw UnimplementedError();
+  String get keyboardKeyDelete => 'Del';
 
   @override
-  String get keyboardKeyNumpad5 => throw UnimplementedError();
+  String get keyboardKeyEject => 'Eject';
 
   @override
-  String get keyboardKeyNumpad6 => throw UnimplementedError();
+  String get keyboardKeyEnd => 'End';
 
   @override
-  String get keyboardKeyNumpad7 => throw UnimplementedError();
+  String get keyboardKeyEscape => 'Esc';
 
   @override
-  String get keyboardKeyNumpad8 => throw UnimplementedError();
+  String get keyboardKeyFn => 'Fn';
 
   @override
-  String get keyboardKeyNumpad9 => throw UnimplementedError();
+  String get keyboardKeyHome => 'Home';
 
   @override
-  String get keyboardKeyNumpadAdd => throw UnimplementedError();
+  String get keyboardKeyInsert => 'Insert';
 
   @override
-  String get keyboardKeyNumpadComma => throw UnimplementedError();
+  String get keyboardKeyMeta => 'Meta';
 
   @override
-  String get keyboardKeyNumpadDecimal => throw UnimplementedError();
+  String get keyboardKeyMetaMacOs => 'Command';
 
   @override
-  String get keyboardKeyNumpadDivide => throw UnimplementedError();
+  String get keyboardKeyMetaWindows => 'Win';
 
   @override
-  String get keyboardKeyNumpadEnter => throw UnimplementedError();
+  String get keyboardKeyNumLock => 'Num Lock';
 
   @override
-  String get keyboardKeyNumpadEqual => throw UnimplementedError();
+  String get keyboardKeyNumpad1 => 'Num 1';
 
   @override
-  String get keyboardKeyNumpadMultiply => throw UnimplementedError();
+  String get keyboardKeyNumpad2 => 'Num 2';
 
   @override
-  String get keyboardKeyNumpadParenLeft => throw UnimplementedError();
+  String get keyboardKeyNumpad3 => 'Num 3';
 
   @override
-  String get keyboardKeyNumpadParenRight => throw UnimplementedError();
+  String get keyboardKeyNumpad4 => 'Num 4';
 
   @override
-  String get keyboardKeyNumpadSubtract => throw UnimplementedError();
+  String get keyboardKeyNumpad5 => 'Num 5';
 
   @override
-  String get keyboardKeyPageDown => throw UnimplementedError();
+  String get keyboardKeyNumpad6 => 'Num 6';
 
   @override
-  String get keyboardKeyPageUp => throw UnimplementedError();
+  String get keyboardKeyNumpad7 => 'Num 7';
 
   @override
-  String get keyboardKeyPower => throw UnimplementedError();
+  String get keyboardKeyNumpad8 => 'Num 8';
 
   @override
-  String get keyboardKeyPowerOff => throw UnimplementedError();
+  String get keyboardKeyNumpad9 => 'Num 9';
 
   @override
-  String get keyboardKeyPrintScreen => throw UnimplementedError();
-
-  String get keyboardKeyRomaji => throw UnimplementedError();
+  String get keyboardKeyNumpad0 => 'Num 0';
 
   @override
-  String get keyboardKeyScrollLock => throw UnimplementedError();
+  String get keyboardKeyNumpadAdd => 'Num +';
 
   @override
-  String get keyboardKeySelect => throw UnimplementedError();
+  String get keyboardKeyNumpadComma => 'Num ,';
 
   @override
-  String get keyboardKeySpace => throw UnimplementedError();
-
-  String get keyboardKeyZenkaku => throw UnimplementedError();
-
-  String get keyboardKeyZenkakuHankaku => throw UnimplementedError();
+  String get keyboardKeyNumpadDecimal => 'Num .';
 
   @override
-  String get menuBarMenuLabel => throw UnimplementedError();
+  String get keyboardKeyNumpadDivide => 'Num /';
 
   @override
-  String get bottomSheetLabel => '';
+  String get keyboardKeyNumpadEnter => 'Num Enter';
 
   @override
-  String get currentDateLabel => throw UnimplementedError();
+  String get keyboardKeyNumpadEqual => 'Num =';
 
   @override
-  String get keyboardKeyShift => throw UnimplementedError();
+  String get keyboardKeyNumpadMultiply => 'Num *';
 
   @override
-  String get scrimLabel => '';
+  String get keyboardKeyNumpadParenLeft => 'Num (';
 
   @override
-  String get scrimOnTapHintRaw => 'null';
+  String get keyboardKeyNumpadParenRight => 'Num )';
 
   @override
-  String get collapsedHint => 'collapsedHint';
+  String get keyboardKeyNumpadSubtract => 'Num -';
 
   @override
-  String get expandedHint => 'expandedHint';
+  String get keyboardKeyPageDown => 'PgDown';
 
   @override
-  String get expansionTileCollapsedHint => 'expansionTileCollapsedHint';
+  String get keyboardKeyPageUp => 'PgUp';
 
   @override
-  String get expansionTileCollapsedTapHint => 'expansionTileCollapsedTapHint';
+  String get keyboardKeyPower => 'Power';
 
   @override
-  String get expansionTileExpandedHint => 'expansionTileExpandedHint';
+  String get keyboardKeyPowerOff => 'Power Off';
 
   @override
-  String get expansionTileExpandedTapHint => 'expansionTileExpandedTapHint';
+  String get keyboardKeyPrintScreen => 'Print Screen';
 
   @override
-  String get scanTextButtonLabel => '';
-  
-  
-  String get lookUpButtonLabel => '';
-  
-  
-  String get menuDismissLabel => '';
-  
-  
-  String get searchWebButtonLabel => '';
-  
-  
-  String get shareButtonLabel => '';
+  String get keyboardKeyScrollLock => 'Scroll Lock';
 
+  @override
+  String get keyboardKeySelect => 'Select';
 
-    
+  @override
+  String get keyboardKeySpace => 'Space';
 
+  @override
+  String get menuBarMenuLabel => 'Menu bar menu';
+
+  @override
+  String get bottomSheetLabel => 'Bottom sheet';
+
+  @override
+  String get currentDateLabel => 'ئەمڕۆ';
+
+  @override
+  String get keyboardKeyShift => 'Left Shift';
+
+  @override
+  String get scrimLabel => 'Scrim';
+
+  @override
+  String get scrimOnTapHintRaw => 'ئێرە داگرە بۆ لابردن';
+
+  @override
+  String get collapsedHint => 'بچوککراو';
+
+  @override
+  String get expandedHint => 'گەورەکراو';
+
+  @override
+  String get expansionTileCollapsedHint => 'بچوککراو';
+
+  @override
+  String get expansionTileCollapsedTapHint => 'داگرە بۆ گەورەکردن';
+
+  @override
+  String get expansionTileExpandedHint => 'گەورەکراو';
+
+  @override
+  String get expansionTileExpandedTapHint => 'داگرە بۆ بچوککردن';
+
+  @override
+  String get lookUpButtonLabel => 'گەڕان';
+
+  @override
+  String get menuDismissLabel => 'لابردنەوەی مێنیو';
+
+  @override
+  String get scanTextButtonLabel => 'سکانکردنی دەق';
+
+  @override
+  String get searchWebButtonLabel => 'گەڕان لە وێب';
+
+  @override
+  String get shareButtonLabel => 'هاوبەشکردن';
+
+  @override
+  String get clearButtonTooltip => 'سڕینەوە';
+
+  @override
+  String get selectedDateLabel => 'بەرواری هەڵبژێردراو';
  
 }
 
