@@ -50,27 +50,17 @@ class _KurdishMaterialLocalizationsDelegate
 
 class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   const KurdishMaterialLocalizations({
-    String localeName = 'ku',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat shortDateFormat,
-    required intl.DateFormat compactDateFormat,
-    required intl.DateFormat shortMonthDayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat longDateFormat,
-    required intl.DateFormat yearMonthFormat,
-    required intl.NumberFormat decimalFormat,
-    required intl.NumberFormat twoDigitZeroPaddedFormat,
-  }) : super(
-            localeName: localeName,
-            shortDateFormat: shortDateFormat,
-            compactDateFormat: compactDateFormat,
-            shortMonthDayFormat: shortMonthDayFormat,
-            fullYearFormat: fullYearFormat,
-            mediumDateFormat: mediumDateFormat,
-            longDateFormat: longDateFormat,
-            yearMonthFormat: yearMonthFormat,
-            decimalFormat: decimalFormat,
-            twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat);
+    super.localeName = 'ku',
+    required super.fullYearFormat,
+    required super.shortDateFormat,
+    required super.compactDateFormat,
+    required super.shortMonthDayFormat,
+    required super.mediumDateFormat,
+    required super.longDateFormat,
+    required super.yearMonthFormat,
+    required super.decimalFormat,
+    required super.twoDigitZeroPaddedFormat,
+  });
   static const LocalizationsDelegate<MaterialLocalizations> delegate =
       _KurdishMaterialLocalizationsDelegate();
 
@@ -354,52 +344,6 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get lastPageTooltip => 'دوایین لاپه‌ڕه‌';
 
   @override
-
-  @override
-  String get showMenuTooltip => 'پیشاندانی پێڕست';
-
-  @override
-  String get signedInLabel => 'چوونە ژوورەوە';
-
-  @override
-  String get tabLabelRaw => 'خشتەبەندی \$tabIndex لە \$tabCount';
-
-  @override
-  TimeOfDayFormat get timeOfDayFormatRaw => TimeOfDayFormat.h_colon_mm_space_a;
-
-  @override
-  String get timePickerDialHelpText => 'کات هەڵبژێرە';
-
-  @override
-  String get timePickerHourLabel => 'کاتژمێر';
-
-  @override
-  String get timePickerHourModeAnnouncement => 'کاتژمێر هەڵبژێرە';
-
-  @override
-  String get timePickerInputHelpText => 'کات بنووسە';
-
-  @override
-  String get timePickerMinuteLabel => 'خولەک';
-
-  @override
-  String get timePickerMinuteModeAnnouncement => 'خولەک هەڵبژێرە';
-
-  @override
-  String get unspecifiedDate => 'بەروار';
-
-  @override
-  String get unspecifiedDateRange => 'مەودای بەروار';
-
-  @override
-  String get viewLicensesButtonLabel => 'پیشاندانی مۆڵەتەکان';
-
-  @override
-  String get firstPageTooltip => 'لاپه‌ڕه‌ی سه‌ره‌تا';
-
-  @override
-  String get lastPageTooltip => 'دوایین لاپه‌ڕه‌';
-  @override
   String get keyboardKeyAlt => 'Alt';
 
   @override
@@ -593,7 +537,6 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get selectedDateLabel => 'بەرواری هەڵبژێردراو';
- 
 }
 
 const kuDateSymbols = {
