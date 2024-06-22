@@ -7,7 +7,6 @@ import 'package:intl/date_symbol_data_custom.dart' as date_symbol_data_custom;
 import 'package:intl/date_symbols.dart' as intl;
 import 'package:intl/intl.dart' as intl;
 
-
 /// A custom set of date patterns for the `nn` locale.
 ///
 /// These are not accurate and are just a clone of the date patterns for the
@@ -318,53 +317,50 @@ class KurdishCupertinoLocalizations extends GlobalCupertinoLocalizations {
       KurdishCupertinoLocalizationsDelegate();
 
   @override
-  String get datePickerDateOrderString => throw UnimplementedError();
+  String get datePickerDateOrderString => 'ymd';
 
   @override
-  String get datePickerDateTimeOrderString => throw UnimplementedError();
+  String get datePickerDateTimeOrderString => 'date_time_dayPeriod';
 
   @override
-  String? get datePickerHourSemanticsLabelOther => throw UnimplementedError();
+  String? get datePickerHourSemanticsLabelOther => 'ساعات';
 
   @override
-  String? get datePickerMinuteSemanticsLabelOther => throw UnimplementedError();
+  String? get datePickerMinuteSemanticsLabelOther => 'خولەکان';
 
   @override
-  String get searchTextFieldPlaceholderLabel => throw UnimplementedError();
+  String get searchTextFieldPlaceholderLabel => 'گەڕان';
 
   @override
-  String get tabSemanticsLabelRaw => throw UnimplementedError();
+  String get tabSemanticsLabelRaw => 'تاب';
 
   @override
-  String? get timerPickerHourLabelOther => throw UnimplementedError();
+  String? get timerPickerHourLabelOther => 'ساعات';
 
   @override
-  String? get timerPickerMinuteLabelOther => throw UnimplementedError();
+  String? get timerPickerMinuteLabelOther => 'خولەکان';
 
   @override
-  String? get timerPickerSecondLabelOther => throw UnimplementedError();
+  String? get timerPickerSecondLabelOther => 'چرکەکان';
 
   @override
-  String get todayLabel => throw UnimplementedError();
+  String get todayLabel => 'ئەمڕۆ';
 
   @override
-  String get noSpellCheckReplacementsLabel => throw UnimplementedError();
-  
+  String get noSpellCheckReplacementsLabel => 'هیچ گۆڕانکاریەک نییە';
+
   @override
-  String get lookUpButtonLabel =>  '';
-  
- 
+  String get lookUpButtonLabel => 'گەڕان';
+
   @override
-  String get menuDismissLabel => '';
-  
-  
+  String get menuDismissLabel => 'لادان';
+
   @override
-  String get searchWebButtonLabel => '';
-  
-  
+  String get searchWebButtonLabel => 'گەڕان لە وێب';
+
   @override
-  String get shareButtonLabel => '';
-  
+  String get shareButtonLabel => 'بەشداریکردن';
+
   @override
-  String get clearButtonLabel => '';
+  String get clearButtonLabel => 'سڕینەوە';
 }
