@@ -13,44 +13,57 @@ import 'package:intl/intl.dart' as intl;
 /// `no` locale to demonstrate how one would write and use custom date patterns.
 // #docregion Date
 const kurdishLocaleDatePatterns = {
-  'd': 'd.',
+  'd': 'd',
   'E': 'ccc',
   'EEEE': 'cccc',
   'LLL': 'LLL',
-// #enddocregion Date
   'LLLL': 'LLLL',
-  'M': 'L.',
-  'Md': 'd.M.',
-  'MEd': 'EEE d.M.',
+  'M': 'M',
+  // 'M': 'L',
+  'Md': 'd‏/M',
+  // 'Md': 'M/d',
+  'MEd': 'EEE، d‏/M',
+  // 'MEd': 'EEE, M/d',
   'MMM': 'LLL',
-  'MMMd': 'd. MMM',
-  'MMMEd': 'EEE d. MMM',
+  'MMMd': 'd MMM',
+  // 'MMMd': 'MMM d',
+  'MMMEd': 'EEE، d MMM',
   'MMMM': 'LLLL',
-  'MMMMd': 'd. MMMM',
-  'MMMMEEEEd': 'EEEE d. MMMM',
+  'MMMMd': 'd MMMM',
+  'MMMMEEEEd': 'EEEE، d MMMM',
   'QQQ': 'QQQ',
   'QQQQ': 'QQQQ',
   'y': 'y',
-  'yM': 'M.y',
-  'yMd': 'd.M.y',
-  'yMEd': 'EEE d.MM.y',
+  'yM': 'M‏/y',
+  // 'yM': 'M.y',
+  'yMd': 'd‏/M‏/y',
+  // 'yMd': 'd.M.y',
+  'yMEd': 'EEE، d‏/M‏/y',
+  // 'yMEd': 'EEE d.MM.y',
   'yMMM': 'MMM y',
-  'yMMMd': 'd. MMM y',
-  'yMMMEd': 'EEE d. MMM y',
+  'yMMMd': 'd MMM y',
+  'yMMMEd': 'EEE، d MMM y',
   'yMMMM': 'MMMM y',
-  'yMMMMd': 'd. MMMM y',
-  'yMMMMEEEEd': 'EEEE d. MMMM y',
+  'yMMMMd': 'd MMMM y',
+  'yMMMMEEEEd': 'EEEE، d MMMM y',
   'yQQQ': 'QQQ y',
   'yQQQQ': 'QQQQ y',
-  'H': 'HH',
+  'H': 'H',
+  // 'H': 'HH',
   'Hm': 'HH:mm',
   'Hms': 'HH:mm:ss',
-  'j': 'HH',
-  'jm': 'HH:mm',
-  'jms': 'HH:mm:ss',
-  'jmv': 'HH:mm v',
-  'jmz': 'HH:mm z',
-  'jz': 'HH z',
+  'j': 'h a',
+  // 'j': 'HH',
+  'jm': 'h:mm a',
+  // 'jm': 'HH:mm',
+  'jms': 'h:mm:ss a',
+  // 'jms': 'HH:mm:ss',
+  'jmv': 'h:mm a v',
+  // 'jmv': 'HH:mm v',
+  'jmz': 'h:mm a z',
+  // 'jmz': 'HH:mm z',
+  'jz': 'h a z',
+  // 'jz': 'HH z',
   'm': 'm',
   'ms': 'mm:ss',
   's': 's',
@@ -253,12 +266,12 @@ class KurdishCupertinoLocalizationsDelegate
         // However, an alternative is to simply use a supported locale's
         // DateFormat symbols, similar to NumberFormat above.
         fullYearFormat: intl.DateFormat('y', localeName),
-        dayFormat: intl.DateFormat('yMd', localeName),
-        doubleDigitMinuteFormat: intl.DateFormat('yMMMd', localeName),
-        mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
-        singleDigitHourFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
-        singleDigitMinuteFormat: intl.DateFormat('MMMM y', localeName),
-        singleDigitSecondFormat: intl.DateFormat('MMM d', localeName),
+        dayFormat: intl.DateFormat('d', localeName),
+        doubleDigitMinuteFormat: intl.DateFormat('HH:mm', localeName),
+        mediumDateFormat: intl.DateFormat('MMM d', localeName),
+        singleDigitHourFormat: intl.DateFormat('H', localeName),
+        singleDigitMinuteFormat: intl.DateFormat('H:m', localeName),
+        singleDigitSecondFormat: intl.DateFormat('s', localeName),
       ),
     );
   }
@@ -285,12 +298,8 @@ class KurdishCupertinoLocalizations extends GlobalCupertinoLocalizations {
     required super.singleDigitSecondFormat,
   });
 
-// #docregion Getters
-
   @override
   String get alertDialogLabel => r'ئاگادارکردنەوە';
-
-// #enddocregion Getters
 
   @override
   String get anteMeridiemAbbreviation => r'پ.ن';

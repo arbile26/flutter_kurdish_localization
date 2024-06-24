@@ -26,12 +26,12 @@ class _KurdishMaterialLocalizationsDelegate
     return SynchronousFuture<MaterialLocalizations>(
       KurdishMaterialLocalizations(
         fullYearFormat: intl.DateFormat('y', localeName),
-        shortDateFormat: intl.DateFormat('MM/DD/YY', localeName),
-        compactDateFormat: intl.DateFormat('EEE, MMM d', localeName),
-        shortMonthDayFormat: intl.DateFormat('MM/DD', localeName),
+        compactDateFormat: intl.DateFormat('yMd', localeName),
+        shortDateFormat: intl.DateFormat('yMMMd', localeName),
         mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
         longDateFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
         yearMonthFormat: intl.DateFormat('MMMM y', localeName),
+        shortMonthDayFormat: intl.DateFormat('MMM d'),
         // The `intl` library's NumberFormat class is generated from CLDR data
         // (see https://github.com/dart-lang/intl/blob/master/lib/number_symbols_data.dart).
         // Unfortunately, there is no way to use a locale that isn't defined in
@@ -75,6 +75,18 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
       _KurdishMaterialLocalizationsDelegate();
 
   @override
+  String get licensesPackageDetailTextTwo => '٢ مۆڵەت';
+
+  @override
+  String get licensesPackageDetailTextMany => '\$licenseCount مۆڵەت';
+  
+  @override
+  String get licensesPackageDetailTextFew => '\$licenseCount مۆڵەت';
+
+  @override
+  String get licensesPackageDetailTextZero => 'مۆڵەت نیە';
+
+  @override
   String get aboutListTileTitleRaw => 'دەربارەی \$applicationName';
 
   @override
@@ -111,13 +123,13 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get cutButtonLabel => 'بڕین';
 
   @override
-  String get dateHelpText => 'mm/dd/yyyy';
+  String get dateHelpText => 'dd/mm/yyyy';
 
   @override
   String get dateInputLabel => 'بەروار بنووسە';
 
   @override
-  String get dateOutOfRangeLabel => 'دەرەوەی مەودایە';
+  String get dateOutOfRangeLabel => 'لەسەر مەودای بەروار';
 
   @override
   String get datePickerHelpText => 'بەروار دیاری بکە';
@@ -181,9 +193,6 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get licensesPackageDetailTextOther => '\$licenseCount مۆڵەت';
 
   @override
-  String get licensesPackageDetailTextZero => 'مۆڵەت نیە';
-
-  @override
   String get licensesPageTitle => 'مۆڵەتەکان';
 
   @override
@@ -205,7 +214,7 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get openAppDrawerTooltip => 'کردنەوەی لیستی ڕێنیشاندەر';
 
   @override
-  String get pageRowsInfoTitleRaw => '\$firstRow–\$lastRow لە \$rowCount';
+  String get pageRowsInfoTitleRaw => '\$firstRow - \$lastRow لە \$rowCount';
 
   @override
   String get pageRowsInfoTitleApproximateRaw =>
@@ -230,13 +239,13 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get refreshIndicatorSemanticLabel => 'نوێکردنەوە';
 
   @override
-  String? get remainingTextFieldCharacterCountFew => null;
+  String? get remainingTextFieldCharacterCountFew => '\$remainingCount پیتەکان ماون';
 
   @override
   List<String> get narrowWeekdays => ['ی', 'د', 'س', 'چ', 'پ', 'ه', 'ش'];
 
   @override
-  String? get remainingTextFieldCharacterCountMany => null;
+  String? get remainingTextFieldCharacterCountMany => '\$remainingCount پیتەکان ماون';
 
   @override
   String get remainingTextFieldCharacterCountOne => '١ پیت ماوە';
@@ -297,7 +306,7 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get selectedRowCountTitleOne => '١ دانە هەڵبژێردرا';
 
   @override
-  String get selectedRowCountTitleOther => '\$selectedRowCount هەڵبژێردراو';
+  String get selectedRowCountTitleOther => '\$selectedRowCount دانە هەڵبژێردراون';
 
   @override
   String? get selectedRowCountTitleTwo => '٢ دانە هەڵبژێردراون';
@@ -354,67 +363,67 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get lastPageTooltip => 'دوایین لاپه‌ڕه‌';
 
   @override
-  String get keyboardKeyAlt => 'alt';
+  String get keyboardKeyAlt => 'Alt';
 
   @override
-  String get keyboardKeyAltGraph => 'alt gr';
+  String get keyboardKeyAltGraph => 'AltGr';
 
   @override
-  String get keyboardKeyBackspace => 'backspace';
+  String get keyboardKeyBackspace => 'Backspace';
 
   @override
-  String get keyboardKeyCapsLock => 'caps lock';
+  String get keyboardKeyCapsLock => 'Caps Lock';
 
   @override
-  String get keyboardKeyChannelDown => 'channel down';
+  String get keyboardKeyChannelDown => 'چەناڵی خوارەوە';
 
   @override
-  String get keyboardKeyChannelUp => 'channel up';
+  String get keyboardKeyChannelUp => 'چەناڵی سەرەوە';
 
   @override
-  String get keyboardKeyControl => 'control';
+  String get keyboardKeyControl => 'Ctrl';
 
   @override
-  String get keyboardKeyDelete => 'delete';
+  String get keyboardKeyDelete => 'Del';
 
-  String get keyboardKeyEisu => 'eisu';
-
-  @override
-  String get keyboardKeyEject => 'eject';
+  String get keyboardKeyEisu => 'Eisu';
 
   @override
-  String get keyboardKeyEnd => 'end';
+  String get keyboardKeyEject => 'Eject';
 
   @override
-  String get keyboardKeyEscape => 'escape';
+  String get keyboardKeyEnd => 'End';
 
   @override
-  String get keyboardKeyFn => 'fn';
-
-  String get keyboardKeyHangulMode => 'hangul mode';
-
-  String get keyboardKeyHanjaMode => 'hanja mode';
-
-  String get keyboardKeyHankaku => 'hankaku';
-
-  String get keyboardKeyHiragana => 'hiragana';
-
-  String get keyboardKeyHiraganaKatakana => 'hiragana katakana';
+  String get keyboardKeyEscape => 'ESC';
 
   @override
-  String get keyboardKeyHome => 'home';
+  String get keyboardKeyFn => 'Fn';
+
+  String get keyboardKeyHangulMode => 'Hangul Mode';
+
+  String get keyboardKeyHanjaMode => 'Hanja Mode';
+
+  String get keyboardKeyHankaku => 'Hankaku';
+
+  String get keyboardKeyHiragana => 'Hiragana';
+
+  String get keyboardKeyHiraganaKatakana => 'Hiragana Katakana';
 
   @override
-  String get keyboardKeyInsert => 'insert';
-
-  String get keyboardKeyKanaMode => 'kana mode';
-
-  String get keyboardKeyKanjiMode => 'kanji mode';
-
-  String get keyboardKeyKatakana => 'katakana';
+  String get keyboardKeyHome => 'Home';
 
   @override
-  String get keyboardKeyMeta => 'meta';
+  String get keyboardKeyInsert => 'Insert';
+
+  String get keyboardKeyKanaMode => 'Kana Mode';
+
+  String get keyboardKeyKanjiMode => 'Kanji Mode';
+
+  String get keyboardKeyKatakana => 'Katakana';
+
+  @override
+  String get keyboardKeyMeta => 'Meta';
 
   @override
   String get keyboardKeyMetaMacOs => '⌘';
@@ -423,97 +432,97 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get keyboardKeyMetaWindows => '❖';
 
   @override
-  String get keyboardKeyNumLock => 'num lock';
+  String get keyboardKeyNumLock => 'Num Lock';
 
   @override
-  String get keyboardKeyNumpad0 => 'numpad 0';
+  String get keyboardKeyNumpad0 => 'نومپاد ٠';
 
   @override
-  String get keyboardKeyNumpad1 => 'numpad 1';
+  String get keyboardKeyNumpad1 => 'نومپاد ١';
 
   @override
-  String get keyboardKeyNumpad2 => 'numpad 2';
+  String get keyboardKeyNumpad2 => 'نومپاد ٢';
 
   @override
-  String get keyboardKeyNumpad3 => 'numpad 3';
+  String get keyboardKeyNumpad3 => 'نومپاد ٣';
 
   @override
-  String get keyboardKeyNumpad4 => 'numpad 4';
+  String get keyboardKeyNumpad4 => 'نومپاد ٤';
 
   @override
-  String get keyboardKeyNumpad5 => 'numpad 5';
+  String get keyboardKeyNumpad5 => 'نومپاد ٥';
 
   @override
-  String get keyboardKeyNumpad6 => 'numpad 6';
+  String get keyboardKeyNumpad6 => 'نومپاد ٦';
 
   @override
-  String get keyboardKeyNumpad7 => 'numpad 7';
+  String get keyboardKeyNumpad7 => 'نومپاد ٧';
 
   @override
-  String get keyboardKeyNumpad8 => 'numpad 8';
+  String get keyboardKeyNumpad8 => 'نومپاد ٨';
 
   @override
-  String get keyboardKeyNumpad9 => 'numpad 9';
+  String get keyboardKeyNumpad9 => 'نومپاد ٩';
 
   @override
-  String get keyboardKeyNumpadAdd => 'numpad add';
+  String get keyboardKeyNumpadAdd => 'نومپاد زیادکردن +';
 
   @override
-  String get keyboardKeyNumpadComma => 'numpad comma';
+  String get keyboardKeyNumpadComma => 'نومپاد کەمە ,';
 
   @override
-  String get keyboardKeyNumpadDecimal => 'numpad decimal';
+  String get keyboardKeyNumpadDecimal => 'نومپاد دەسەڵا .';
 
   @override
-  String get keyboardKeyNumpadDivide => 'numpad divide';
+  String get keyboardKeyNumpadDivide => 'نومپاد وەرگرتنی /';
 
   @override
-  String get keyboardKeyNumpadEnter => 'numpad enter';
+  String get keyboardKeyNumpadEnter => 'نومپاد Enter';
 
   @override
-  String get keyboardKeyNumpadEqual => 'numpad equal';
+  String get keyboardKeyNumpadEqual => 'نومپاد هاوکێشەی =';
 
   @override
-  String get keyboardKeyNumpadMultiply => 'numpad multiply';
+  String get keyboardKeyNumpadMultiply => 'نومپاد چنی *';
 
   @override
-  String get keyboardKeyNumpadParenLeft => 'numpad paren left';
+  String get keyboardKeyNumpadParenLeft => 'نومپاد پەرانی چەپ (';
 
   @override
-  String get keyboardKeyNumpadParenRight => 'numpad paren right';
+  String get keyboardKeyNumpadParenRight => 'نومپاد پەرانی راست )';
 
   @override
-  String get keyboardKeyNumpadSubtract => 'numpad subtract';
+  String get keyboardKeyNumpadSubtract => 'نومپاد کەمکردن -';
 
   @override
-  String get keyboardKeyPageDown => 'page down';
+  String get keyboardKeyPageDown => 'PgDown';
 
   @override
-  String get keyboardKeyPageUp => 'page up';
+  String get keyboardKeyPageUp => 'PgUp';
 
   @override
-  String get keyboardKeyPower => 'power';
+  String get keyboardKeyPower => 'پاور';
 
   @override
-  String get keyboardKeyPowerOff => 'power off';
+  String get keyboardKeyPowerOff => 'کردنەوەی پاور';
 
   @override
-  String get keyboardKeyPrintScreen => 'print screen';
+  String get keyboardKeyPrintScreen => 'PrntScr';
 
-  String get keyboardKeyRomaji => 'romaji';
-
-  @override
-  String get keyboardKeyScrollLock => 'scroll lock';
+  String get keyboardKeyRomaji => 'Romaji';
 
   @override
-  String get keyboardKeySelect => 'select';
+  String get keyboardKeyScrollLock => 'Scroll Lock';
 
   @override
-  String get keyboardKeySpace => 'space';
+  String get keyboardKeySelect => 'هەڵبژاردن';
 
-  String get keyboardKeyZenkaku => 'zenkaku';
+  @override
+  String get keyboardKeySpace => 'جۆرە';
 
-  String get keyboardKeyZenkakuHankaku => 'zenkaku hankaku';
+  String get keyboardKeyZenkaku => 'Zenkaku';
+
+  String get keyboardKeyZenkakuHankaku => 'Zenkaku Hankaku';
 
   @override
   String get menuBarMenuLabel => 'مێنیوی هەڵبژێر';
@@ -525,13 +534,13 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get currentDateLabel => 'بەرواری ئێستا';
 
   @override
-  String get keyboardKeyShift => 'shift';
+  String get keyboardKeyShift => 'Shift';
 
   @override
   String get scrimLabel => 'سکریم';
 
   @override
-  String get scrimOnTapHintRaw => 'داخستن';
+  String get scrimOnTapHintRaw => 'داخستن \$modalRouteContentName';
 
   @override
   String get collapsedHint => 'فراوانکردن';
