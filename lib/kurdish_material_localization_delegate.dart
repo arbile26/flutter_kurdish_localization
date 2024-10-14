@@ -16,22 +16,19 @@ class _KurdishMaterialLocalizationsDelegate
 
   @override
   Future<MaterialLocalizations> load(Locale locale) async {
-    const String localeName = 'ku';
+    // const String localeName = 'ku';
+    final String localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
+    // The locale (in this case `ku`) needs to be initialized into the custom
+    // date symbols and patterns setup that Flutter uses.
     date_symbol_data_custom.initializeDateFormattingCustom(
       locale: localeName,
       patterns: kuLocaleDatePatterns,
       symbols: intl.DateSymbols.deserializeFromMap(kuDateSymbols),
     );
+
     return SynchronousFuture<MaterialLocalizations>(
       KurdishMaterialLocalizations(
-        fullYearFormat: intl.DateFormat('y', localeName),
-        compactDateFormat: intl.DateFormat('yMd', localeName),
-        shortDateFormat: intl.DateFormat('yMMMd', localeName),
-        mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
-        longDateFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
-        yearMonthFormat: intl.DateFormat('MMMM y', localeName),
-        shortMonthDayFormat: intl.DateFormat('MMM d'),
         // The `intl` library's NumberFormat class is generated from CLDR data
         // (see https://github.com/dart-lang/intl/blob/master/lib/number_symbols_data.dart).
         // Unfortunately, there is no way to use a locale that isn't defined in
@@ -40,6 +37,18 @@ class _KurdishMaterialLocalizationsDelegate
         // for 'ar' instead.
         decimalFormat: intl.NumberFormat('#,##0.###', 'ar'),
         twoDigitZeroPaddedFormat: intl.NumberFormat('00', 'ar'),
+        // DateFormat here will use the symbols and patterns provided in the
+        // `date_symbol_data_custom.initializeDateFormattingCustom` call above.
+        // However, an alternative is to simply use a supported locale's
+        // DateFormat symbols, similar to NumberFormat above.
+        localeName: localeName,
+        fullYearFormat: intl.DateFormat('y', localeName),
+        compactDateFormat: intl.DateFormat('yMd', localeName),
+        shortDateFormat: intl.DateFormat('yMMMd', localeName),
+        mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
+        longDateFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
+        yearMonthFormat: intl.DateFormat('MMMM y', localeName),
+        shortMonthDayFormat: intl.DateFormat('MMM d'),
       ),
     );
   }
@@ -50,27 +59,17 @@ class _KurdishMaterialLocalizationsDelegate
 
 class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   const KurdishMaterialLocalizations({
-    String localeName = 'ku',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat shortDateFormat,
-    required intl.DateFormat compactDateFormat,
-    required intl.DateFormat shortMonthDayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat longDateFormat,
-    required intl.DateFormat yearMonthFormat,
-    required intl.NumberFormat decimalFormat,
-    required intl.NumberFormat twoDigitZeroPaddedFormat,
-  }) : super(
-            localeName: localeName,
-            shortDateFormat: shortDateFormat,
-            compactDateFormat: compactDateFormat,
-            shortMonthDayFormat: shortMonthDayFormat,
-            fullYearFormat: fullYearFormat,
-            mediumDateFormat: mediumDateFormat,
-            longDateFormat: longDateFormat,
-            yearMonthFormat: yearMonthFormat,
-            decimalFormat: decimalFormat,
-            twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat);
+    super.localeName = 'ku',
+    required super.fullYearFormat,
+    required super.compactDateFormat,
+    required super.shortDateFormat,
+    required super.mediumDateFormat,
+    required super.longDateFormat,
+    required super.yearMonthFormat,
+    required super.shortMonthDayFormat,
+    required super.decimalFormat,
+    required super.twoDigitZeroPaddedFormat,
+  });
   static const LocalizationsDelegate<MaterialLocalizations> delegate =
       _KurdishMaterialLocalizationsDelegate();
 
@@ -79,7 +78,7 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get licensesPackageDetailTextMany => '\$licenseCount مۆڵەت';
-  
+
   @override
   String get licensesPackageDetailTextFew => '\$licenseCount مۆڵەت';
 
@@ -239,13 +238,15 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get refreshIndicatorSemanticLabel => 'نوێکردنەوە';
 
   @override
-  String? get remainingTextFieldCharacterCountFew => '\$remainingCount پیتەکان ماون';
+  String? get remainingTextFieldCharacterCountFew =>
+      '\$remainingCount پیتەکان ماون';
 
   @override
   List<String> get narrowWeekdays => ['ی', 'د', 'س', 'چ', 'پ', 'ه', 'ش'];
 
   @override
-  String? get remainingTextFieldCharacterCountMany => '\$remainingCount پیتەکان ماون';
+  String? get remainingTextFieldCharacterCountMany =>
+      '\$remainingCount پیتەکان ماون';
 
   @override
   String get remainingTextFieldCharacterCountOne => '١ پیت ماوە';
@@ -306,7 +307,8 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get selectedRowCountTitleOne => '١ دانە هەڵبژێردرا';
 
   @override
-  String get selectedRowCountTitleOther => '\$selectedRowCount دانە هەڵبژێردراون';
+  String get selectedRowCountTitleOther =>
+      '\$selectedRowCount دانە هەڵبژێردراون';
 
   @override
   String? get selectedRowCountTitleTwo => '٢ دانە هەڵبژێردراون';

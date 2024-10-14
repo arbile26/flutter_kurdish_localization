@@ -22,8 +22,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_kurdish_localization: 63f159fa68cb0f048a0d8d5ad898f782cf300c00
-  shared_preferences_foundation: e2dae3258e06f44cc55f49d42024fd8dd03c590c
+  shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
 
 PODFILE CHECKSUM: 075ddf6b19cdcced44581bd8fbdfb58404a78f8a
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.15.2
