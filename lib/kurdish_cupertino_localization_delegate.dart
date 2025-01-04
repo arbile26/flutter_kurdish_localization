@@ -7,7 +7,6 @@ import 'package:intl/date_symbol_data_custom.dart' as date_symbol_data_custom;
 import 'package:intl/date_symbols.dart' as intl;
 import 'package:intl/intl.dart' as intl;
 
-
 /// A custom set of date patterns for the `nn` locale.
 ///
 /// These are not accurate and are just a clone of the date patterns for the
@@ -260,6 +259,7 @@ class KurdishCupertinoLocalizationsDelegate
         singleDigitHourFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
         singleDigitMinuteFormat: intl.DateFormat('MMMM y', localeName),
         singleDigitSecondFormat: intl.DateFormat('MMM d', localeName),
+        weekdayFormat: intl.DateFormat('EEEE', localeName),
       ),
     );
   }
@@ -284,6 +284,7 @@ class KurdishCupertinoLocalizations extends GlobalCupertinoLocalizations {
     required super.singleDigitHourFormat,
     required super.singleDigitMinuteFormat,
     required super.singleDigitSecondFormat,
+    required super.weekdayFormat,
   });
 
 // #docregion Getters
@@ -349,22 +350,19 @@ class KurdishCupertinoLocalizations extends GlobalCupertinoLocalizations {
 
   @override
   String get noSpellCheckReplacementsLabel => throw UnimplementedError();
-  
+
   @override
-  String get lookUpButtonLabel =>  '';
-  
- 
+  String get lookUpButtonLabel => '';
+
   @override
   String get menuDismissLabel => '';
-  
-  
+
   @override
   String get searchWebButtonLabel => '';
-  
-  
+
   @override
   String get shareButtonLabel => '';
-  
+
   @override
   String get clearButtonLabel => '';
 }
