@@ -28,9 +28,7 @@ class KurdishWidgetLocalizations extends WidgetsLocalizations {
 
   @override
   TextDirection get textDirection => TextDirection.rtl;
-
   @override
-  
   String get reorderItemDown => 'ڕیزکردنەوەی ئایتمی خوارەوە';
 
   @override
@@ -43,8 +41,29 @@ class KurdishWidgetLocalizations extends WidgetsLocalizations {
   String get reorderItemToEnd => 'ڕیزکردنەوەی ئایتمی کۆتایی';
 
   @override
-  String get reorderItemToStart => 'ڕیزکردنەوەی ئایتمی دەستی';
+  String get reorderItemToStart => 'ڕیزکردنەوەی ئایتمی دەستپێ';
 
   @override
   String get reorderItemUp => 'ڕیزکردنەوەی ئایتمی سەرەوە';
+
+  @override
+  String get copyButtonLabel => 'کۆپی';
+
+  @override
+  String get cutButtonLabel => 'بڕین';
+
+  @override
+  String get lookUpButtonLabel => 'گەڕان';
+
+  @override
+  String get pasteButtonLabel => 'پەیست';
+
+  @override
+  String get searchWebButtonLabel => 'گەڕان لە وێبدا';
+
+  @override
+  String get selectAllButtonLabel => 'هەموو هەڵبژاردنەکان';
+
+  @override
+  String get shareButtonLabel => 'هاوبەشکردن';
 }

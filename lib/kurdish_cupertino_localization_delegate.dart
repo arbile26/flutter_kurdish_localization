@@ -299,30 +299,29 @@ class KurdishCupertinoLocalizations extends GlobalCupertinoLocalizations {
     required super.singleDigitSecondFormat,
     required super.weekdayFormat,
   });
+  @override
+  String get alertDialogLabel => 'ئاگادارکردنەوە';
 
   @override
-  String get alertDialogLabel => r'ئاگادارکردنەوە';
+  String get anteMeridiemAbbreviation => 'پ.ن';
 
   @override
-  String get anteMeridiemAbbreviation => r'پ.ن';
+  String get copyButtonLabel => 'کۆپی';
 
   @override
-  String get copyButtonLabel => r'کۆپی';
+  String get cutButtonLabel => 'بڕین';
 
   @override
-  String get cutButtonLabel => r'بڕین';
+  String get modalBarrierDismissLabel => 'لادان';
 
   @override
-  String get modalBarrierDismissLabel => r'لادان';
+  String get pasteButtonLabel => 'پەیست';
 
   @override
-  String get pasteButtonLabel => r'پەیست';
+  String get postMeridiemAbbreviation => 'د.ن';
 
   @override
-  String get postMeridiemAbbreviation => r'د.ن';
-
-  @override
-  String get selectAllButtonLabel => r'دیاریکردنی هەموو';
+  String get selectAllButtonLabel => 'دیاریکردنی هەموو';
 
   static const LocalizationsDelegate<CupertinoLocalizations> delegate =
       KurdishCupertinoLocalizationsDelegate();
@@ -374,4 +373,10 @@ class KurdishCupertinoLocalizations extends GlobalCupertinoLocalizations {
 
   @override
   String get clearButtonLabel => 'سڕینەوە';
+
+  @override
+  String get backButtonLabel => 'گەڕانەوە';
+
+  @override
+  String get cancelButtonLabel => 'لابردن';
 }
