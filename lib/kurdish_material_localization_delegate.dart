@@ -16,22 +16,19 @@ class _KurdishMaterialLocalizationsDelegate
 
   @override
   Future<MaterialLocalizations> load(Locale locale) async {
-    const String localeName = 'ku';
+    // const String localeName = 'ku';
+    final String localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
+    // The locale (in this case `ku`) needs to be initialized into the custom
+    // date symbols and patterns setup that Flutter uses.
     date_symbol_data_custom.initializeDateFormattingCustom(
       locale: localeName,
       patterns: kuLocaleDatePatterns,
       symbols: intl.DateSymbols.deserializeFromMap(kuDateSymbols),
     );
+
     return SynchronousFuture<MaterialLocalizations>(
       KurdishMaterialLocalizations(
-        fullYearFormat: intl.DateFormat('y', localeName),
-        shortDateFormat: intl.DateFormat('MM/DD/YY', localeName),
-        compactDateFormat: intl.DateFormat('EEE, MMM d', localeName),
-        shortMonthDayFormat: intl.DateFormat('MM/DD', localeName),
-        mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
-        longDateFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
-        yearMonthFormat: intl.DateFormat('MMMM y', localeName),
         // The `intl` library's NumberFormat class is generated from CLDR data
         // (see https://github.com/dart-lang/intl/blob/master/lib/number_symbols_data.dart).
         // Unfortunately, there is no way to use a locale that isn't defined in
@@ -40,6 +37,18 @@ class _KurdishMaterialLocalizationsDelegate
         // for 'ar' instead.
         decimalFormat: intl.NumberFormat('#,##0.###', 'ar'),
         twoDigitZeroPaddedFormat: intl.NumberFormat('00', 'ar'),
+        // DateFormat here will use the symbols and patterns provided in the
+        // `date_symbol_data_custom.initializeDateFormattingCustom` call above.
+        // However, an alternative is to simply use a supported locale's
+        // DateFormat symbols, similar to NumberFormat above.
+        localeName: localeName,
+        fullYearFormat: intl.DateFormat('y', localeName),
+        compactDateFormat: intl.DateFormat('yMd', localeName),
+        shortDateFormat: intl.DateFormat('yMMMd', localeName),
+        mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
+        longDateFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
+        yearMonthFormat: intl.DateFormat('MMMM y', localeName),
+        shortMonthDayFormat: intl.DateFormat('MMM d'),
       ),
     );
   }
@@ -50,29 +59,31 @@ class _KurdishMaterialLocalizationsDelegate
 
 class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   const KurdishMaterialLocalizations({
-    String localeName = 'ku',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat shortDateFormat,
-    required intl.DateFormat compactDateFormat,
-    required intl.DateFormat shortMonthDayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat longDateFormat,
-    required intl.DateFormat yearMonthFormat,
-    required intl.NumberFormat decimalFormat,
-    required intl.NumberFormat twoDigitZeroPaddedFormat,
-  }) : super(
-            localeName: localeName,
-            shortDateFormat: shortDateFormat,
-            compactDateFormat: compactDateFormat,
-            shortMonthDayFormat: shortMonthDayFormat,
-            fullYearFormat: fullYearFormat,
-            mediumDateFormat: mediumDateFormat,
-            longDateFormat: longDateFormat,
-            yearMonthFormat: yearMonthFormat,
-            decimalFormat: decimalFormat,
-            twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat);
+    super.localeName = 'ku',
+    required super.fullYearFormat,
+    required super.compactDateFormat,
+    required super.shortDateFormat,
+    required super.mediumDateFormat,
+    required super.longDateFormat,
+    required super.yearMonthFormat,
+    required super.shortMonthDayFormat,
+    required super.decimalFormat,
+    required super.twoDigitZeroPaddedFormat,
+  });
   static const LocalizationsDelegate<MaterialLocalizations> delegate =
       _KurdishMaterialLocalizationsDelegate();
+
+  @override
+  String get licensesPackageDetailTextTwo => '٢ مۆڵەت';
+
+  @override
+  String get licensesPackageDetailTextMany => '\$licenseCount مۆڵەت';
+
+  @override
+  String get licensesPackageDetailTextFew => '\$licenseCount مۆڵەت';
+
+  @override
+  String get licensesPackageDetailTextZero => 'مۆڵەت نیە';
 
   @override
   String get aboutListTileTitleRaw => 'دەربارەی \$applicationName';
@@ -111,13 +122,13 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get cutButtonLabel => 'بڕین';
 
   @override
-  String get dateHelpText => 'mm/dd/yyyy';
+  String get dateHelpText => 'dd/mm/yyyy';
 
   @override
   String get dateInputLabel => 'بەروار بنووسە';
 
   @override
-  String get dateOutOfRangeLabel => 'دەرەوەی مەودایە';
+  String get dateOutOfRangeLabel => 'لەسەر مەودای بەروار';
 
   @override
   String get datePickerHelpText => 'بەروار دیاری بکە';
@@ -181,9 +192,6 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get licensesPackageDetailTextOther => '\$licenseCount مۆڵەت';
 
   @override
-  String get licensesPackageDetailTextZero => 'مۆڵەت نیە';
-
-  @override
   String get licensesPageTitle => 'مۆڵەتەکان';
 
   @override
@@ -205,7 +213,7 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get openAppDrawerTooltip => 'کردنەوەی لیستی ڕێنیشاندەر';
 
   @override
-  String get pageRowsInfoTitleRaw => '\$firstRow–\$lastRow لە \$rowCount';
+  String get pageRowsInfoTitleRaw => '\$firstRow - \$lastRow لە \$rowCount';
 
   @override
   String get pageRowsInfoTitleApproximateRaw =>
@@ -230,13 +238,15 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get refreshIndicatorSemanticLabel => 'نوێکردنەوە';
 
   @override
-  String? get remainingTextFieldCharacterCountFew => null;
+  String? get remainingTextFieldCharacterCountFew =>
+      '\$remainingCount پیتەکان ماون';
 
   @override
   List<String> get narrowWeekdays => ['ی', 'د', 'س', 'چ', 'پ', 'ه', 'ش'];
 
   @override
-  String? get remainingTextFieldCharacterCountMany => null;
+  String? get remainingTextFieldCharacterCountMany =>
+      '\$remainingCount پیتەکان ماون';
 
   @override
   String get remainingTextFieldCharacterCountOne => '١ پیت ماوە';
@@ -246,7 +256,7 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
       '\$remainingCount پیتەکان ماون';
 
   @override
-  String? get remainingTextFieldCharacterCountTwo => null;
+  String? get remainingTextFieldCharacterCountTwo => '٢ پیت ماوە';
 
   @override
   String get remainingTextFieldCharacterCountZero => 'هیچ پیتێک نەماوەتەوە';
@@ -288,19 +298,20 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get selectYearSemanticsLabel => 'ساڵ هەڵبژێرە';
 
   @override
-  String? get selectedRowCountTitleFew => null;
+  String? get selectedRowCountTitleFew => 'شتی دانە هەڵبژێردراوە';
 
   @override
-  String? get selectedRowCountTitleMany => null;
+  String? get selectedRowCountTitleMany => 'زۆر دانە هەڵبژێردراوە';
 
   @override
   String get selectedRowCountTitleOne => '١ دانە هەڵبژێردرا';
 
   @override
-  String get selectedRowCountTitleOther => '\$selectedRowCount هەڵبژێردراو';
+  String get selectedRowCountTitleOther =>
+      '\$selectedRowCount دانە هەڵبژێردراون';
 
   @override
-  String? get selectedRowCountTitleTwo => null;
+  String? get selectedRowCountTitleTwo => '٢ دانە هەڵبژێردراون';
 
   @override
   String get selectedRowCountTitleZero => 'هیچ هەڵنەبژێراوە';
@@ -354,222 +365,223 @@ class KurdishMaterialLocalizations extends GlobalMaterialLocalizations {
   String get lastPageTooltip => 'دوایین لاپه‌ڕه‌';
 
   @override
-  String get keyboardKeyAlt => throw UnimplementedError();
+  String get keyboardKeyAlt => 'Alt';
 
   @override
-  String get keyboardKeyAltGraph => throw UnimplementedError();
+  String get keyboardKeyAltGraph => 'AltGr';
 
   @override
-  String get keyboardKeyBackspace => throw UnimplementedError();
+  String get keyboardKeyBackspace => 'Backspace';
 
   @override
-  String get keyboardKeyCapsLock => throw UnimplementedError();
+  String get keyboardKeyCapsLock => 'Caps Lock';
 
   @override
-  String get keyboardKeyChannelDown => throw UnimplementedError();
+  String get keyboardKeyChannelDown => 'چەناڵی خوارەوە';
 
   @override
-  String get keyboardKeyChannelUp => throw UnimplementedError();
+  String get keyboardKeyChannelUp => 'چەناڵی سەرەوە';
 
   @override
-  String get keyboardKeyControl => throw UnimplementedError();
+  String get keyboardKeyControl => 'Ctrl';
 
   @override
-  String get keyboardKeyDelete => throw UnimplementedError();
+  String get keyboardKeyDelete => 'Del';
 
-  String get keyboardKeyEisu => throw UnimplementedError();
-
-  @override
-  String get keyboardKeyEject => throw UnimplementedError();
+  String get keyboardKeyEisu => 'Eisu';
 
   @override
-  String get keyboardKeyEnd => throw UnimplementedError();
+  String get keyboardKeyEject => 'Eject';
 
   @override
-  String get keyboardKeyEscape => throw UnimplementedError();
+  String get keyboardKeyEnd => 'End';
 
   @override
-  String get keyboardKeyFn => throw UnimplementedError();
-
-  String get keyboardKeyHangulMode => throw UnimplementedError();
-
-  String get keyboardKeyHanjaMode => throw UnimplementedError();
-
-  String get keyboardKeyHankaku => throw UnimplementedError();
-
-  String get keyboardKeyHiragana => throw UnimplementedError();
-
-  String get keyboardKeyHiraganaKatakana => throw UnimplementedError();
+  String get keyboardKeyEscape => 'ESC';
 
   @override
-  String get keyboardKeyHome => throw UnimplementedError();
+  String get keyboardKeyFn => 'Fn';
+
+  String get keyboardKeyHangulMode => 'Hangul Mode';
+
+  String get keyboardKeyHanjaMode => 'Hanja Mode';
+
+  String get keyboardKeyHankaku => 'Hankaku';
+
+  String get keyboardKeyHiragana => 'Hiragana';
+
+  String get keyboardKeyHiraganaKatakana => 'Hiragana Katakana';
 
   @override
-  String get keyboardKeyInsert => throw UnimplementedError();
-
-  String get keyboardKeyKanaMode => throw UnimplementedError();
-
-  String get keyboardKeyKanjiMode => throw UnimplementedError();
-
-  String get keyboardKeyKatakana => throw UnimplementedError();
+  String get keyboardKeyHome => 'Home';
 
   @override
-  String get keyboardKeyMeta => throw UnimplementedError();
+  String get keyboardKeyInsert => 'Insert';
+
+  String get keyboardKeyKanaMode => 'Kana Mode';
+
+  String get keyboardKeyKanjiMode => 'Kanji Mode';
+
+  String get keyboardKeyKatakana => 'Katakana';
 
   @override
-  String get keyboardKeyMetaMacOs => throw UnimplementedError();
+  String get keyboardKeyMeta => 'Meta';
 
   @override
-  String get keyboardKeyMetaWindows => throw UnimplementedError();
+  String get keyboardKeyMetaMacOs => '⌘';
 
   @override
-  String get keyboardKeyNumLock => throw UnimplementedError();
+  String get keyboardKeyMetaWindows => '❖';
 
   @override
-  String get keyboardKeyNumpad0 => throw UnimplementedError();
+  String get keyboardKeyNumLock => 'Num Lock';
 
   @override
-  String get keyboardKeyNumpad1 => throw UnimplementedError();
+  String get keyboardKeyNumpad0 => 'نومپاد ٠';
 
   @override
-  String get keyboardKeyNumpad2 => throw UnimplementedError();
+  String get keyboardKeyNumpad1 => 'نومپاد ١';
 
   @override
-  String get keyboardKeyNumpad3 => throw UnimplementedError();
+  String get keyboardKeyNumpad2 => 'نومپاد ٢';
 
   @override
-  String get keyboardKeyNumpad4 => throw UnimplementedError();
+  String get keyboardKeyNumpad3 => 'نومپاد ٣';
 
   @override
-  String get keyboardKeyNumpad5 => throw UnimplementedError();
+  String get keyboardKeyNumpad4 => 'نومپاد ٤';
 
   @override
-  String get keyboardKeyNumpad6 => throw UnimplementedError();
+  String get keyboardKeyNumpad5 => 'نومپاد ٥';
 
   @override
-  String get keyboardKeyNumpad7 => throw UnimplementedError();
+  String get keyboardKeyNumpad6 => 'نومپاد ٦';
 
   @override
-  String get keyboardKeyNumpad8 => throw UnimplementedError();
+  String get keyboardKeyNumpad7 => 'نومپاد ٧';
 
   @override
-  String get keyboardKeyNumpad9 => throw UnimplementedError();
+  String get keyboardKeyNumpad8 => 'نومپاد ٨';
 
   @override
-  String get keyboardKeyNumpadAdd => throw UnimplementedError();
+  String get keyboardKeyNumpad9 => 'نومپاد ٩';
 
   @override
-  String get keyboardKeyNumpadComma => throw UnimplementedError();
+  String get keyboardKeyNumpadAdd => 'نومپاد زیادکردن +';
 
   @override
-  String get keyboardKeyNumpadDecimal => throw UnimplementedError();
+  String get keyboardKeyNumpadComma => 'نومپاد کەمە ,';
 
   @override
-  String get keyboardKeyNumpadDivide => throw UnimplementedError();
+  String get keyboardKeyNumpadDecimal => 'نومپاد دەسەڵا .';
 
   @override
-  String get keyboardKeyNumpadEnter => throw UnimplementedError();
+  String get keyboardKeyNumpadDivide => 'نومپاد وەرگرتنی /';
 
   @override
-  String get keyboardKeyNumpadEqual => throw UnimplementedError();
+  String get keyboardKeyNumpadEnter => 'نومپاد Enter';
 
   @override
-  String get keyboardKeyNumpadMultiply => throw UnimplementedError();
+  String get keyboardKeyNumpadEqual => 'نومپاد هاوکێشەی =';
 
   @override
-  String get keyboardKeyNumpadParenLeft => throw UnimplementedError();
+  String get keyboardKeyNumpadMultiply => 'نومپاد چنی *';
 
   @override
-  String get keyboardKeyNumpadParenRight => throw UnimplementedError();
+  String get keyboardKeyNumpadParenLeft => 'نومپاد پەرانی چەپ (';
 
   @override
-  String get keyboardKeyNumpadSubtract => throw UnimplementedError();
+  String get keyboardKeyNumpadParenRight => 'نومپاد پەرانی راست )';
 
   @override
-  String get keyboardKeyPageDown => throw UnimplementedError();
+  String get keyboardKeyNumpadSubtract => 'نومپاد کەمکردن -';
 
   @override
-  String get keyboardKeyPageUp => throw UnimplementedError();
+  String get keyboardKeyPageDown => 'PgDown';
 
   @override
-  String get keyboardKeyPower => throw UnimplementedError();
+  String get keyboardKeyPageUp => 'PgUp';
 
   @override
-  String get keyboardKeyPowerOff => throw UnimplementedError();
+  String get keyboardKeyPower => 'پاور';
 
   @override
-  String get keyboardKeyPrintScreen => throw UnimplementedError();
-
-  String get keyboardKeyRomaji => throw UnimplementedError();
+  String get keyboardKeyPowerOff => 'کردنەوەی پاور';
 
   @override
-  String get keyboardKeyScrollLock => throw UnimplementedError();
+  String get keyboardKeyPrintScreen => 'PrntScr';
+
+  String get keyboardKeyRomaji => 'Romaji';
 
   @override
-  String get keyboardKeySelect => throw UnimplementedError();
+  String get keyboardKeyScrollLock => 'Scroll Lock';
 
   @override
-  String get keyboardKeySpace => throw UnimplementedError();
-
-  String get keyboardKeyZenkaku => throw UnimplementedError();
-
-  String get keyboardKeyZenkakuHankaku => throw UnimplementedError();
+  String get keyboardKeySelect => 'هەڵبژاردن';
 
   @override
-  String get menuBarMenuLabel => throw UnimplementedError();
+  String get keyboardKeySpace => 'جۆرە';
+
+  String get keyboardKeyZenkaku => 'Zenkaku';
+
+  String get keyboardKeyZenkakuHankaku => 'Zenkaku Hankaku';
 
   @override
-  String get bottomSheetLabel => '';
+  String get menuBarMenuLabel => 'مێنیوی هەڵبژێر';
 
   @override
-  String get currentDateLabel => throw UnimplementedError();
+  String get bottomSheetLabel => 'شاردنەوەی پەردەی خوارەوە';
 
   @override
-  String get keyboardKeyShift => throw UnimplementedError();
+  String get currentDateLabel => 'بەرواری ئێستا';
 
   @override
-  String get scrimLabel => '';
+  String get keyboardKeyShift => 'Shift';
 
   @override
-  String get scrimOnTapHintRaw => 'null';
+  String get scrimLabel => 'سکریم';
 
   @override
-  String get collapsedHint => 'collapsedHint';
+  String get scrimOnTapHintRaw => 'داخستن \$modalRouteContentName';
 
   @override
-  String get expandedHint => 'expandedHint';
+  String get collapsedHint => 'فراوانکردن';
 
   @override
-  String get expansionTileCollapsedHint => 'expansionTileCollapsedHint';
+  String get expandedHint => 'نوشتانەوە';
 
   @override
-  String get expansionTileCollapsedTapHint => 'expansionTileCollapsedTapHint';
+  String get expansionTileCollapsedHint => 'فراوانکردن';
 
   @override
-  String get expansionTileExpandedHint => 'expansionTileExpandedHint';
+  String get expansionTileCollapsedTapHint => 'فراوانکردن';
 
   @override
-  String get expansionTileExpandedTapHint => 'expansionTileExpandedTapHint';
+  String get expansionTileExpandedHint => 'نوشتانەوە';
 
   @override
-  String get scanTextButtonLabel => '';
-  
-  
-  String get lookUpButtonLabel => '';
-  
-  
-  String get menuDismissLabel => '';
-  
-  
-  String get searchWebButtonLabel => '';
-  
-  
-  String get shareButtonLabel => '';
+  String get expansionTileExpandedTapHint => 'نوشتانەوە';
 
+  @override
+  String get scanTextButtonLabel => 'سکانکردن';
 
-    
+  @override
+  String get lookUpButtonLabel => 'لێدان';
 
- 
+  @override
+  String get menuDismissLabel => 'مەنوو داخستن';
+
+  @override
+  String get searchWebButtonLabel => 'بگەڕێنەوە لە وێب';
+
+  @override
+  String get shareButtonLabel => 'شەرکردن';
+
+  @override
+  String get clearButtonTooltip => 'پاککردن';
+
+  @override
+  String get selectedDateLabel => 'دەستپێکردنی بەروار';
 }
 
 const kuDateSymbols = {

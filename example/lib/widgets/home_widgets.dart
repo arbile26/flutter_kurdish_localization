@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kurdish_localization_example/localization/language_constants.dart';
 import 'package:flutter_kurdish_localization_example/util/constants.dart';
@@ -132,6 +133,20 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                const SizedBox(height: 10),
+
+                CustomContainer(
+                  child: SizedBox(
+                    height: 100,
+                    child: CupertinoDatePicker(
+                      mode: CupertinoDatePickerMode.date,
+                      dateOrder: DatePickerDateOrder.dmy,
+                      onDateTimeChanged: (newDate) {},
+                      initialDateTime: DateTime.now(),
+                      maximumDate: DateTime.now(),
+                    ),
                   ),
                 ),
               ],
