@@ -1,6 +1,7 @@
 name: flutter_kurdish_localization_example
 description: Demonstrates how to use the flutter_kurdish_localization plugin.
 
+version: 1.0.8
 
 publish_to: 'none' 
 
@@ -37,7 +38,7 @@ flutter:
 
   assets:
     - lib/lang/en.json
-    - lib/lang/ckb.json
+    - lib/lang/ku.json
     - lib/lang/ar.json
     - assets/images/
     - assets/flags/

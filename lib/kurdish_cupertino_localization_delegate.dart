@@ -13,44 +13,57 @@ import 'package:intl/intl.dart' as intl;
 /// `no` locale to demonstrate how one would write and use custom date patterns.
 // #docregion Date
 const kurdishLocaleDatePatterns = {
-  'd': 'd.',
+  'd': 'd',
   'E': 'ccc',
   'EEEE': 'cccc',
   'LLL': 'LLL',
-// #enddocregion Date
   'LLLL': 'LLLL',
-  'M': 'L.',
-  'Md': 'd.M.',
-  'MEd': 'EEE d.M.',
+  'M': 'M',
+  // 'M': 'L',
+  'Md': 'd‏/M',
+  // 'Md': 'M/d',
+  'MEd': 'EEE، d‏/M',
+  // 'MEd': 'EEE, M/d',
   'MMM': 'LLL',
-  'MMMd': 'd. MMM',
-  'MMMEd': 'EEE d. MMM',
+  'MMMd': 'd MMM',
+  // 'MMMd': 'MMM d',
+  'MMMEd': 'EEE، d MMM',
   'MMMM': 'LLLL',
-  'MMMMd': 'd. MMMM',
-  'MMMMEEEEd': 'EEEE d. MMMM',
+  'MMMMd': 'd MMMM',
+  'MMMMEEEEd': 'EEEE، d MMMM',
   'QQQ': 'QQQ',
   'QQQQ': 'QQQQ',
   'y': 'y',
-  'yM': 'M.y',
-  'yMd': 'd.M.y',
-  'yMEd': 'EEE d.MM.y',
+  'yM': 'M‏/y',
+  // 'yM': 'M.y',
+  'yMd': 'd‏/M‏/y',
+  // 'yMd': 'd.M.y',
+  'yMEd': 'EEE، d‏/M‏/y',
+  // 'yMEd': 'EEE d.MM.y',
   'yMMM': 'MMM y',
-  'yMMMd': 'd. MMM y',
-  'yMMMEd': 'EEE d. MMM y',
+  'yMMMd': 'd MMM y',
+  'yMMMEd': 'EEE، d MMM y',
   'yMMMM': 'MMMM y',
-  'yMMMMd': 'd. MMMM y',
-  'yMMMMEEEEd': 'EEEE d. MMMM y',
+  'yMMMMd': 'd MMMM y',
+  'yMMMMEEEEd': 'EEEE، d MMMM y',
   'yQQQ': 'QQQ y',
   'yQQQQ': 'QQQQ y',
-  'H': 'HH',
+  'H': 'H',
+  // 'H': 'HH',
   'Hm': 'HH:mm',
   'Hms': 'HH:mm:ss',
-  'j': 'HH',
-  'jm': 'HH:mm',
-  'jms': 'HH:mm:ss',
-  'jmv': 'HH:mm v',
-  'jmz': 'HH:mm z',
-  'jz': 'HH z',
+  'j': 'h a',
+  // 'j': 'HH',
+  'jm': 'h:mm a',
+  // 'jm': 'HH:mm',
+  'jms': 'h:mm:ss a',
+  // 'jms': 'HH:mm:ss',
+  'jmv': 'h:mm a v',
+  // 'jmv': 'HH:mm v',
+  'jmz': 'h:mm a z',
+  // 'jmz': 'HH:mm z',
+  'jz': 'h a z',
+  // 'jz': 'HH z',
   'm': 'm',
   'ms': 'mm:ss',
   's': 's',
@@ -81,7 +94,7 @@ const kuDateSymbols2 = {
     'ل',
     'ت.ی',
     'ت.د',
-    'ک.ی'
+    'ک.ی',
   ],
   'STANDALONENARROWMONTHS': [
     'ک.د',
@@ -95,7 +108,7 @@ const kuDateSymbols2 = {
     'ل',
     'ت.ی',
     'ت.د',
-    'ک.ی'
+    'ک.ی',
   ],
   'MONTHS': [
     'کانونی دووەم',
@@ -160,7 +173,7 @@ const kuDateSymbols2 = {
     'چوارشەممە',
     'پێنجشەممە',
     'هەینی',
-    'شەممە'
+    'شەممە',
   ],
   'STANDALONEWEEKDAYS': [
     'یەکشەممە',
@@ -169,7 +182,7 @@ const kuDateSymbols2 = {
     'چوارشەممە',
     'پێنجشەممە',
     'هەینی',
-    'شەممە'
+    'شەممە',
   ],
   'SHORTWEEKDAYS': [
     'یەکشەم',
@@ -178,7 +191,7 @@ const kuDateSymbols2 = {
     'چوارشەم',
     'پێنجشەم',
     'هەینی',
-    'شەممە'
+    'شەممە',
   ],
   'STANDALONESHORTWEEKDAYS': [
     'یەکشەم',
@@ -187,36 +200,21 @@ const kuDateSymbols2 = {
     'چوارشەم',
     'پێنجشەم',
     'هەینی',
-    'شەممە'
+    'شەممە',
   ],
   'NARROWWEEKDAYS': ['ی', 'د', 'س', 'چ', 'پ', 'ه', 'ش'],
   'STANDALONENARROWWEEKDAYS': ['ی', 'د', 'س', 'چ', 'پ', 'ه', 'ش'],
   'SHORTQUARTERS': ['چ١', 'چ٢', 'چ٣', 'چ٤'],
   'QUARTERS': ['چارەکی یەکەم', 'چارەکی دووەم', 'چارەکی سێیەم', 'چارەکی چوارەم'],
   'AMPMS': ['پ.ن', 'د.ن'],
-  'DATEFORMATS': [
-    'EEEE، d MMMM y',
-    'd MMMM y',
-    'dd‏/MM‏/y',
-    'd‏/M‏/y',
-  ],
-  'TIMEFORMATS': [
-    'h:mm:ss a zzzz',
-    'h:mm:ss a z',
-    'h:mm:ss a',
-    'h:mm a',
-  ],
+  'DATEFORMATS': ['EEEE، d MMMM y', 'd MMMM y', 'dd‏/MM‏/y', 'd‏/M‏/y'],
+  'TIMEFORMATS': ['h:mm:ss a zzzz', 'h:mm:ss a z', 'h:mm:ss a', 'h:mm a'],
   'AVAILABLEFORMATS': null,
-  'DATETIMEFORMATS': [
-    '{1} {0}',
-    '{1} {0}',
-    '{1} {0}',
-    '{1} {0}',
-  ],
+  'DATETIMEFORMATS': ['{1} {0}', '{1} {0}', '{1} {0}', '{1} {0}'],
   'ZERODIGIT': '٠',
   'FIRSTDAYOFWEEK': 5,
   'WEEKENDRANGE': [4, 5],
-  'FIRSTWEEKCUTOFFDAY': 3
+  'FIRSTWEEKCUTOFFDAY': 3,
 };
 
 // #docregion Delegate
@@ -286,83 +284,85 @@ class KurdishCupertinoLocalizations extends GlobalCupertinoLocalizations {
     required super.singleDigitSecondFormat,
     required super.weekdayFormat,
   });
-
-// #docregion Getters
+  @override
+  String get alertDialogLabel => 'ئاگادارکردنەوە';
 
   @override
-  String get alertDialogLabel => r'ئاگادارکردنەوە';
-
-// #enddocregion Getters
+  String get anteMeridiemAbbreviation => 'پ.ن';
 
   @override
-  String get anteMeridiemAbbreviation => r'پ.ن';
+  String get copyButtonLabel => 'کۆپی';
 
   @override
-  String get copyButtonLabel => r'کۆپی';
+  String get cutButtonLabel => 'بڕین';
 
   @override
-  String get cutButtonLabel => r'بڕین';
+  String get modalBarrierDismissLabel => 'لادان';
 
   @override
-  String get modalBarrierDismissLabel => r'لادان';
+  String get pasteButtonLabel => 'پەیست';
 
   @override
-  String get pasteButtonLabel => r'پەیست';
+  String get postMeridiemAbbreviation => 'د.ن';
 
   @override
-  String get postMeridiemAbbreviation => r'د.ن';
-
-  @override
-  String get selectAllButtonLabel => r'دیاریکردنی هەموو';
+  String get selectAllButtonLabel => 'دیاریکردنی هەموو';
 
   static const LocalizationsDelegate<CupertinoLocalizations> delegate =
       KurdishCupertinoLocalizationsDelegate();
 
   @override
-  String get datePickerDateOrderString => throw UnimplementedError();
+  String get datePickerDateOrderString => 'ymd';
 
   @override
-  String get datePickerDateTimeOrderString => throw UnimplementedError();
+  String get datePickerDateTimeOrderString => 'date_time_dayPeriod';
 
   @override
-  String? get datePickerHourSemanticsLabelOther => throw UnimplementedError();
+  String? get datePickerHourSemanticsLabelOther => 'ساعات';
 
   @override
-  String? get datePickerMinuteSemanticsLabelOther => throw UnimplementedError();
+  String? get datePickerMinuteSemanticsLabelOther => 'خولەکان';
 
   @override
-  String get searchTextFieldPlaceholderLabel => throw UnimplementedError();
+  String get searchTextFieldPlaceholderLabel => 'گەڕان';
 
   @override
-  String get tabSemanticsLabelRaw => throw UnimplementedError();
+  String get tabSemanticsLabelRaw => 'تاب';
 
   @override
-  String? get timerPickerHourLabelOther => throw UnimplementedError();
+  String? get timerPickerHourLabelOther => 'ساعات';
 
   @override
-  String? get timerPickerMinuteLabelOther => throw UnimplementedError();
+  String? get timerPickerMinuteLabelOther => 'خولەکان';
 
   @override
-  String? get timerPickerSecondLabelOther => throw UnimplementedError();
+  String? get timerPickerSecondLabelOther => 'چرکەکان';
 
   @override
-  String get todayLabel => throw UnimplementedError();
+  String get todayLabel => 'ئەمڕۆ';
 
   @override
-  String get noSpellCheckReplacementsLabel => throw UnimplementedError();
+  String get noSpellCheckReplacementsLabel => 'هیچ گۆڕانکاریەک نییە';
 
   @override
-  String get lookUpButtonLabel => '';
+  String get lookUpButtonLabel => 'گەڕان';
 
   @override
-  String get menuDismissLabel => '';
+  String get menuDismissLabel => 'لادان';
 
   @override
-  String get searchWebButtonLabel => '';
+  String get searchWebButtonLabel => 'گەڕان لە وێب';
 
   @override
-  String get shareButtonLabel => '';
+  String get shareButtonLabel => 'بەشداریکردن';
 
   @override
-  String get clearButtonLabel => '';
+  String get clearButtonLabel => 'سڕینەوە';
+
+  @override
+  String get backButtonLabel => 'گەڕانەوە';
+
+  @override
+  @override
+  String get cancelButtonLabel => 'لابردن';
 }

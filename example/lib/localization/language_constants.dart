@@ -6,7 +6,7 @@ const String langCode = 'languageCode';
 
 //code wlatakan
 const String english = 'en';
-const String kurdish = 'ckb';
+const String kurdish = 'ku';
 const String arabic = 'ar';
 
 Future<Locale> setLocale(String languageCode) async {
