@@ -16,8 +16,7 @@ class _KurdishMaterialLocalizationsDelegate
 
   @override
   Future<MaterialLocalizations> load(Locale locale) async {
-    // const String localeName = 'ku';
-    final String localeName = intl.Intl.canonicalizedLocale(locale.toString());
+    const String localeName = 'ku';
 
     // The locale (in this case `ku`) needs to be initialized into the custom
     // date symbols and patterns setup that Flutter uses.
@@ -48,7 +47,7 @@ class _KurdishMaterialLocalizationsDelegate
         mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
         longDateFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
         yearMonthFormat: intl.DateFormat('MMMM y', localeName),
-        shortMonthDayFormat: intl.DateFormat('MMM d'),
+        shortMonthDayFormat: intl.DateFormat('MMM d', localeName),
       ),
     );
   }
