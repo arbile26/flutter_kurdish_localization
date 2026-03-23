@@ -68,5 +68,5 @@ class KurdishWidgetLocalizations extends WidgetsLocalizations {
   String get shareButtonLabel => 'هاوبەشکردن';
 
   @override
-  String get radioButtonUnselectedLabel => 'هەڵنەبژێردراوە';
+  String get radioButtonUnselectedLabel => 'هەڵنەبژێردراو';
 }
