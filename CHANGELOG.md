@@ -1,3 +1,12 @@
+## 3.1.0
+
+* Converted to a pure Dart package: removed unused native plugin scaffolding
+  (Android/iOS/Linux/macOS/Windows) and the method-channel boilerplate.
+  The public API (the Kurdish material/widgets/cupertino localization delegates)
+  is unchanged. This removes all Gradle/Kotlin/AGP build requirements for
+  consumers, including the built-in-Kotlin migration, and the iOS/macOS CocoaPods pod
+  (nothing left to migrate to Swift Package Manager).
+
 ## 0.0.1
 
 * TODO: Describe initial release.
